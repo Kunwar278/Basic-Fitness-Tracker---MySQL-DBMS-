@@ -36,3 +36,19 @@ calories_burned	INT	Calories burned
 
 Relationship:
 One user → Many fitness_log entries
+Some Sample Queries to try are:
+1.
+SELECT * FROM users;
+SELECT * FROM fitness_log;
+
+2.
+SELECT name, AVG(steps) FROM users
+JOIN fitness_log USING (user_id)
+GROUP BY user_id;
+
+3.
+    SELECT name, SUM(calories_burned) FROM users
+JOIN fitness_log USING (user_id)
+GROUP BY user_id;
+
+
